@@ -1,7 +1,8 @@
-import Facts from "./component/Facts";
-import DailyTask from "./component/DailyTask";
+import Facts from "./components/Facts";
+import DailyTask from "./components/DailyTask";
 import { BrowserRouter, Route, Routes, Link } from "react-router-dom";
-import Dashboard from "./component/Dashboard";
+import Dashboard from "./components/Dashboard";
+import AddTodo from "./components/AddToDo";
 
 function App() {
   return (
@@ -31,6 +32,12 @@ function App() {
                     >
                       Facts
                     </Link>
+                    <Link
+                      className="text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium"
+                      to="/addtodo"
+                    >
+                      Add To Do
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -42,6 +49,7 @@ function App() {
           <Route path="/" element={<Dashboard />} />
           <Route path="/daily-task" element={<DailyTask />} />
           <Route path="/facts" element={<Facts />} />
+          <Route path="/addtodo" element={<AddTodo />} />
           <Route path="*" element={<Dashboard />} />
         </Routes>
       </BrowserRouter>
